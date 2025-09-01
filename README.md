@@ -1,17 +1,16 @@
 # Ride Booking API
 
-A secure, scalable, role-based backend API for a ride booking system (like Uber/Pathao).
+Secure, role-based backend (Express + Mongoose + TypeScript).
 
 ## Features
-- JWT Authentication
-- Role-based Authorization (Admin, Rider, Driver)
-- Rider → request/cancel ride, view history
-- Driver → accept rides, update status, earnings
-- Admin → manage users/drivers/rides
+- JWT Auth, Role-based (admin, rider, driver)
+- Rider: request/cancel, history
+- Driver: accept, status update, earnings, availability
+- Admin: users/drivers/rides management
+- Clean modular structure, global error handler
 
-## Installation
+## Run
 ```bash
 npm install
-
-
+npm run seed   # creates admin (admin@example.com / 123456)
 npm run dev
