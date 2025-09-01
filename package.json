@@ -4,10 +4,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-  "dev": "ts-node-dev --loader ts-node/esm --respawn src/server.ts",
-  "build": "tsc",
-  "start": "node dist/server.js",
-  "seed": "ts-node-dev --loader ts-node/esm src/seed/seedAdmin.ts"
+  "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+  "seed": "ts-node src/seed/seedAdmin.ts"
 },
   "keywords": [],
   "author": "",
