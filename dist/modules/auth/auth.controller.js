@@ -1,36 +1,25 @@
-import bcrypt from "bcrypt";
-//import { User } from "../user/user.model";
-//import  generateToken from "../../utils/generateToken.js";
-import generateToken from "../../utils/generateToken";
-import { User } from "../user/user.model.js";
-export const register = async (req, res) => {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.login = exports.register = void 0;
+const auth_service_1 = require("./auth.service");
+const register = async (req, res) => {
     try {
-        const { name, email, password, role } = req.body;
-        const userExists = await User.findOne({ email });
-        if (userExists)
-            return res.status(400).json({ message: "User already exists" });
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const user = await User.create({ name, email, password: hashedPassword, role });
-        res.status(201).json({ message: "User registered", user });
+        const { user, token } = await (0, auth_service_1.registerUser)(req.body);
+        res.status(201).json({ user, token });
     }
     catch (error) {
-        res.status(500).json({ message: "Server error", error });
+        res.status(400).json({ message: error.message });
     }
 };
-export const login = async (req, res) => {
+exports.register = register;
+const login = async (req, res) => {
     try {
-        const { email, password } = req.body;
-        const user = await User.findOne({ email });
-        if (!user)
-            return res.status(404).json({ message: "User not found" });
-        const isPasswordCorrect = await bcrypt.compare(password, user.password);
-        if (!isPasswordCorrect)
-            return res.status(401).json({ message: "Invalid credentials" });
-        const token = generateToken(user._id, user.role);
-        res.json({ token, role: user.role });
+        const { user, token } = await (0, auth_service_1.loginUser)(req.body);
+        res.status(200).json({ user, token });
     }
     catch (error) {
-        res.status(500).json({ message: "Server error", error });
+        res.status(400).json({ message: error.message });
     }
 };
+exports.login = login;
 //# sourceMappingURL=auth.controller.js.map

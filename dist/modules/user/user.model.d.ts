@@ -5,6 +5,9 @@ export interface IUser extends Document {
     password: string;
     role: "admin" | "rider" | "driver";
     isBlocked: boolean;
+    isApproved?: boolean;
+    isAvailable?: boolean;
+    earnings?: number;
 }
 export declare const User: mongoose.Model<IUser, {}, {}, {}, mongoose.Document<unknown, {}, IUser, {}, {}> & IUser & Required<{
     _id: unknown;

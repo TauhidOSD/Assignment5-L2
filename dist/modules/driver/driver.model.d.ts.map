@@ -1,1 +1,1 @@
-{"version":3,"file":"driver.model.d.ts","sourceRoot":"","sources":["../../../src/modules/driver/driver.model.ts"],"names":[],"mappings":""}
+{"version":3,"file":"driver.model.d.ts","sourceRoot":"","sources":["../../../src/modules/driver/driver.model.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,EAAE,EAAU,QAAQ,EAAE,MAAM,UAAU,CAAC;AAEtD,MAAM,WAAW,OAAQ,SAAQ,QAAQ;IACvC,IAAI,EAAE,QAAQ,CAAC,KAAK,CAAC,QAAQ,CAAC;IAC9B,UAAU,EAAE,OAAO,CAAC;IACpB,WAAW,EAAE,OAAO,CAAC;IACrB,QAAQ,EAAE,MAAM,CAAC;CAClB;AAYD,eAAO,MAAM,MAAM;;;;OAAkD,CAAC"}
