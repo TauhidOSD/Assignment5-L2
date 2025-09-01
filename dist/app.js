@@ -15,6 +15,9 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
+app.get("/", (req, res) => {
+    res.send(" Ride Booking API is running...");
+});
 app.use("/api/auth", auth_route_1.default);
 app.use("/api/users", user_route_1.default);
 app.use("/api/drivers", driver_route_1.default);
